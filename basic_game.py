@@ -23,6 +23,9 @@ ball_pos = [600, 240]
 
 ball_speed = -0.150  # Speed at which the ball moves horizontally
 clock = pygame.time.Clock()
+
+sound = pygame.mixer.Sound("Assets/sound#1.mp3")
+
 # Game loop
 while True:
     
@@ -63,6 +66,7 @@ while True:
     ball_rect = pygame.Rect(ball_pos, ball_image.get_size())
     if player_rect.colliderect(ball_rect):
         # Player and ball have collided, end the game
+        sound.play()
         messagebox.showerror("Oh no!", "The ball caught you! Game Over.")
         player_pos = [320, 240]
         ball_pos = [600, random.randint(0, 480)]
