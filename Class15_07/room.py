@@ -50,7 +50,7 @@ def display():
     glFlush()
     glutSwapBuffers()
 
-    rotation += 0.02
+    rotation += 0.03
 
 def reshape(width, height):
     glViewport(0, 0, width, height)
